@@ -30,7 +30,7 @@
 <header class="site-header">
   <div class="hd-inner">
     <a class="brand" href="index.html"><img src="assets/img/favicon.svg" alt="" width="40" height="40"><span class="brand-name">鳥取県観光・道の駅往来</span></a>
-    <nav class="gnav" aria-label="メインメニュー"><ul><li><a href="index.html" aria-current="page">トップ</a></li><li><a href="kanko/index.html">観光地一覧</a></li><li><a href="eki/index.html">道の駅一覧</a></li><li><a href="area/east.html">東部</a></li><li><a href="area/central.html">中部</a></li><li><a href="area/west.html">西部</a></li></ul></nav>
+    <nav class="gnav" aria-label="メインメニュー"><ul><li><a href="index.html" aria-current="page">トップ</a></li><li><a href="kanko/index.html">観光地一覧</a></li><li><a href="eki/index.html">道の駅一覧</a></li><li class="pc-only"><a href="area/east.html">東部</a></li><li class="pc-only"><a href="area/central.html">中部</a></li><li class="pc-only"><a href="area/west.html">西部</a></li><li class="sp-only"><details class="area-menu"><summary>区域</summary><ul class="area-drop"><li><a href="area/east.html">東部</a></li><li><a href="area/central.html">中部</a></li><li><a href="area/west.html">西部</a></li></ul></details></li></ul></nav>
   </div>
 </header>
 <main class="wrap">
@@ -401,7 +401,7 @@
       <ul>
         <li>このサイトは鳥取県の公式サイトではありません。</li>
         <li>掲載内容は変更されている場合があります。営業時間・料金・開催日などの詳細は、各施設・関係機関にご確認ください。</li>
-        <li>このサイトには広告を掲載しています。広告のリンク先の商品・サービスに関するお問い合わせや取引は、各販売事業者との間で行ってください。当サイトは取引の当事者ではなく、一切責任を負いません。</li>
+        <li>このサイトには広告を掲載しています。</li>
       </ul>
     </div>
     <ul class="ft-links">
@@ -413,6 +413,7 @@
     </ul>
     <p class="copy">&copy; <span id="copy-year">2026</span> 鳥取県観光・道の駅往来</p>
     <p class="copy-op">運営：<a href="https://leben-k.github.io/" target="_blank" rel="noopener">地域情報室</a></p>
+    <script>document.addEventListener("click",function(ev){var d=document.querySelector(".area-menu");if(d&&d.open&&!d.contains(ev.target)){d.open=false;}});</script>
     <script>(function(){var s=2026,y=new Date().getFullYear(),el=document.getElementById("copy-year");if(el&&y>s){el.textContent=s+"-"+y;}})();</script>
   </div>
 </footer>
