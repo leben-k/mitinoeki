@@ -1,0 +1,198 @@
+/* 鳥取県観光・道の駅往来 */
+:root{
+  --ink:#111;          /* 本文：濃い黒 */
+  --ink-strong:#000;   /* 見出し */
+  --paper:rgba(255,253,247,.95);
+  --line:#7a5a33;
+  --accent:#7a2e10;    /* 砂丘の夕焼け色 */
+  --link:#0a2f7a;      /* 濃い紺 */
+  --spot:#c0281c;
+  --station:#16613a;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);background:#e9dcc0;
+  font-family:"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic","YuGothic",Meiryo,sans-serif;
+  font-size:17px;line-height:1.9;font-weight:500;
+}
+/* 背景イラスト（スマホでも固定表示） */
+.bg{position:fixed;inset:0;z-index:-1;background-size:cover;background-position:center bottom;background-color:#e9c48f}
+h1,h2,h3{font-family:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;color:var(--ink-strong);line-height:1.45;font-weight:700}
+h1{font-size:1.9rem;margin:.2em 0 .4em}
+h2{font-size:1.4rem;margin:1.6em 0 .6em;padding-bottom:.25em;border-bottom:3px solid var(--accent)}
+.panel>h2:first-child,.panel>h1:first-child{margin-top:.1em}
+h3{font-size:1.15rem;margin:1.4em 0 .4em;padding-left:.6em;border-left:5px solid var(--accent)}
+p{margin:.6em 0}
+a{color:var(--link);text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+strong{color:var(--ink-strong)}
+
+/* ヘッダー */
+.site-header{background:rgba(255,253,247,.97);border-bottom:3px solid var(--accent);position:sticky;top:0;z-index:10}
+.hd-inner{max-width:1120px;margin:0 auto;padding:8px 16px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink-strong)}
+.brand img{width:40px;height:40px}
+.brand-name{font-family:"Noto Serif JP",serif;font-weight:700;font-size:1.2rem;letter-spacing:.04em}
+.gnav{margin-left:auto;overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+.gnav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;white-space:nowrap}
+.gnav a{display:block;padding:6px 10px;border-radius:8px;text-decoration:none;color:var(--ink-strong);font-weight:700;font-size:.95rem}
+.gnav a:hover,.gnav a[aria-current="page"]{background:var(--accent);color:#fff}
+
+/* 本文レイアウト */
+.wrap{max-width:1120px;margin:0 auto;padding:16px 16px 40px}
+.panel{background:var(--paper);border-radius:var(--radius);padding:24px 28px;margin:0 0 20px;box-shadow:0 6px 24px rgba(40,20,0,.18)}
+.kicker{margin:0;font-weight:700;color:var(--accent);letter-spacing:.06em}
+.kana{display:block;font-size:.9rem;font-weight:600;color:var(--ink);letter-spacing:.08em;margin-top:2px}
+.lead{font-size:1.08rem;font-weight:600}
+.small-note{font-size:.9rem}
+.crumbs ol{display:flex;flex-wrap:wrap;gap:4px;list-style:none;margin:0 0 12px;padding:6px 12px;background:var(--paper);border-radius:10px;font-size:.9rem}
+.crumbs li+li::before{content:"›";margin:0 6px 0 2px}
+
+/* トップのヒーロー */
+.hero{text-align:center;padding:60px 16px 70px;color:#000}
+.hero h1{font-size:2.6rem;margin:.1em 0;letter-spacing:.06em;background:var(--paper);display:inline-block;padding:.15em .7em;border-radius:12px}
+.hero-kicker{display:inline-block;background:var(--paper);padding:4px 14px;border-radius:999px;font-weight:700;margin:0 0 10px}
+.hero-lead{background:var(--paper);max-width:640px;margin:14px auto;padding:12px 18px;border-radius:12px;font-weight:700;font-size:1.08rem}
+.hero-btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:10px 22px;border-radius:999px;border:2px solid var(--accent)}
+.btn-sub{background:#fffdf7;color:var(--ink-strong)}
+.btn:hover{filter:brightness(1.1)}
+
+/* 略図 */
+.map-wrap{margin:12px 0}
+.map-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;border:2px solid var(--line);background:#d9ebf3}
+.ryakuzu{display:block;width:100%;height:auto;min-width:640px}
+#fm{min-width:1100px}
+#am{min-width:820px}
+.ryakuzu .lb{fill:#000;font-weight:700;paint-order:stroke;stroke:#fff;stroke-width:4px;stroke-linejoin:round}
+.ryakuzu .hlb{fill:var(--spot)}
+.ryakuzu .mt{fill:#2c3f1d;font-weight:700;paint-order:stroke;stroke:#fff;stroke-width:3px}
+.ryakuzu .sea{fill:#1d4c66;font-weight:700;letter-spacing:.4em}
+.ryakuzu .nb{fill:#4a3a20;font-weight:700}
+.ryakuzu a.pt:hover .lb,.ryakuzu a.pt:focus .lb{fill:var(--spot);text-decoration:underline}
+.ryakuzu a.pt:focus{outline:none}
+.map-note{font-size:.9rem;margin:6px 0 0}
+.map-scroll::-webkit-scrollbar{height:10px}
+.map-scroll::-webkit-scrollbar-thumb{background:#7a5a33;border-radius:5px}
+.lg{display:inline-block;width:12px;height:12px;vertical-align:-1px;margin:0 3px 0 8px}
+.lg.sp{background:var(--spot);border-radius:50%}
+.lg.st{background:var(--station);border-radius:2px}
+.mk-sp{color:var(--spot)}
+.mk-st{color:var(--station)}
+.area-links{list-style:none;padding:0;margin:16px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.area-links a{display:block;height:100%;padding:12px 14px;border:2px solid var(--line);border-radius:12px;text-decoration:none;color:var(--ink);background:#fff}
+.area-links strong{display:block;font-size:1.1rem;color:var(--accent)}
+.area-links span{font-size:.92rem}
+
+/* カード */
+.cards{list-style:none;padding:0;margin:10px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+.card a{display:flex;flex-direction:column;height:100%;padding:14px 16px;border-radius:12px;border:2px solid #d3b98d;background:#fff;text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.card a:hover{transform:translateY(-2px);box-shadow:0 6px 16px rgba(60,30,0,.18);border-color:var(--accent)}
+.card-tag{font-size:.8rem;font-weight:700;color:#fff;background:var(--spot);align-self:flex-start;padding:1px 10px;border-radius:999px}
+.card-st .card-tag{background:var(--station)}
+.card-title{font-family:"Noto Serif JP",serif;font-weight:700;font-size:1.15rem;margin:6px 0 4px;color:var(--ink-strong)}
+.card-text{font-size:.93rem;line-height:1.75}
+.card-dist{margin-top:auto;padding-top:6px;font-size:.85rem;font-weight:700}
+.cards.mini{grid-template-columns:repeat(auto-fill,minmax(230px,1fr))}
+.cards.mini .card-text{display:none}
+.tags{list-style:none;padding:0;margin:8px 0;display:flex;flex-wrap:wrap;gap:6px}
+.tags li{border:1.5px solid var(--accent);color:var(--ink-strong);font-weight:700;font-size:.85rem;padding:0 10px;border-radius:999px;background:#fff}
+
+/* 一覧・情報 */
+ul.check,ul.hint{padding-left:0;list-style:none}
+ul.check li,ul.hint li{position:relative;padding-left:1.6em;margin:.35em 0}
+ul.check li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:900}
+ul.hint li::before{content:"●";position:absolute;left:.2em;color:var(--station);font-size:.8em;top:.2em}
+.info{display:grid;grid-template-columns:8em 1fr;border-top:1px solid #c9b38a;margin:18px 0 0}
+.info dt,.info dd{margin:0;padding:8px 6px;border-bottom:1px solid #c9b38a}
+.info dt{font-weight:700;background:rgba(122,46,16,.07)}
+.info.big{grid-template-columns:9em 1fr}
+.station-box{border:2px solid #b8d3c0;background:#fff;border-radius:12px;padding:14px 18px;margin:14px 0}
+.station-box h3{border:0;padding:0;margin:0 0 4px;font-size:1.25rem}
+.station-box h3 a{color:var(--station)}
+.dist{display:block;font-family:inherit;font-size:.88rem;color:var(--ink);font-weight:700}
+.sub-h{font-weight:800;margin:14px 0 4px;color:var(--ink-strong)}
+.spec-mini{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:4px 0}
+.spec-mini li{background:#eef6f0;border:1px solid #9fc4ab;border-radius:8px;padding:2px 10px;font-size:.92rem}
+.spec{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.spec li{background:#fff;border:2px solid #b8d3c0;border-left:8px solid var(--station);border-radius:10px;padding:10px 14px}
+.spec strong{display:block;font-size:1.05rem}
+.spec span{font-size:.93rem;line-height:1.75}
+.more{font-weight:700}
+.more::after{content:" →"}
+.more-wrap{text-align:right}
+.howto{padding-left:1.4em}
+.howto li{margin:.4em 0}
+.eki-list{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:6px 16px}
+.eki-list li{display:flex;justify-content:space-between;border-bottom:1px dotted #b09870;padding:4px 0}
+.eki-list a{font-weight:700;text-decoration:none}
+.eki-list .mk-st{margin-right:4px}
+.eki-area{font-size:.85rem;font-weight:700}
+
+/* 季節 */
+.seasons{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.season{border-radius:12px;padding:12px 14px;background:#fff;border:2px solid #ddd}
+.season ul{list-style:none;padding:0;margin:6px 0 0}
+.season li{margin:4px 0;line-height:1.5}
+.season li a{font-weight:700}
+.season li span{display:block;font-size:.85rem}
+.season-name{font-family:"Noto Serif JP",serif;font-weight:700;font-size:1.4rem;margin:0}
+.season-name span{font-size:.85rem;margin-left:8px;font-family:inherit}
+.spring{border-color:#e89ab0}.summer{border-color:#4a9fc8}.autumn{border-color:#d0702a}.winter{border-color:#7f8fb0}
+
+/* Googleマップ（ページ末尾） */
+.map-end{border:3px solid var(--accent)}
+.btn-map{display:inline-block;background:#fff;color:var(--ink-strong);border:3px solid var(--link);border-radius:12px;padding:12px 18px 12px 50px;font-weight:800;text-decoration:none;position:relative}
+.btn-map::before{content:"";position:absolute;left:16px;top:50%;width:22px;height:22px;margin-top:-13px;background:var(--spot);border-radius:50% 50% 50% 0;transform:rotate(-45deg)}
+.btn-map::after{content:"";position:absolute;left:23px;top:50%;width:8px;height:8px;margin-top:-6px;background:#fff;border-radius:50%}
+.btn-map:hover{background:#eef2fb}
+
+/* 広告枠 */
+.ad-frame{background:#fff;border:2px dashed #8a8a8a;border-radius:12px;margin:0 auto 20px;padding:10px 12px 14px;max-width:360px;text-align:center}
+.ad-label{font-size:.9rem;font-weight:800;color:var(--ink-strong);margin-bottom:8px;letter-spacing:.2em}
+
+.ad-body{display:flex;justify-content:center;min-height:60px}
+.ad-body>*{max-width:100%}
+.ad-body img{max-width:100%;height:auto}
+.ad-body iframe{border:0;max-width:100%}
+.ad-placeholder{width:300px;max-width:100%;aspect-ratio:1/1;margin:0;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(45deg,#f4f4f4 0 12px,#eaeaea 12px 24px);font-size:.85rem;padding:16px}
+.ad-frame.is-empty{display:none}
+
+/* 連絡先フォーム */
+.warn{font-weight:700;border-left:6px solid var(--spot);padding:6px 12px;background:#fff3f1}
+.contact-form fieldset{border:2px solid var(--line);border-radius:12px;padding:16px 18px;margin:16px 0;background:#fff}
+.contact-form legend{font-family:"Noto Serif JP",serif;font-weight:700;font-size:1.2rem;padding:0 8px}
+.contact-form label{display:block;font-weight:700;margin:12px 0 4px}
+.contact-form input,.contact-form textarea{width:100%;font:inherit;color:#000;padding:10px 12px;border:2px solid #6d6d6d;border-radius:8px;background:#fff}
+.contact-form input:focus,.contact-form textarea:focus{outline:3px solid #f0b37e;border-color:var(--accent)}
+.contact-form button{margin-top:14px;font:inherit;font-weight:800;background:var(--accent);color:#fff;border:0;border-radius:999px;padding:12px 36px;cursor:pointer}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+
+/* フッター */
+.site-footer{background:rgba(255,253,247,.97);border-top:3px solid var(--accent);margin-top:20px}
+.ft-inner{max-width:1120px;margin:0 auto;padding:20px 16px 28px;font-size:.95rem}
+.notice{border:2px solid var(--line);border-radius:10px;padding:8px 16px;background:#fff}
+.notice p{margin:.2em 0}
+.notice ul{margin:.2em 0;padding-left:1.3em}
+.ft-links{list-style:none;padding:0;display:flex;flex-wrap:wrap;gap:6px 18px;margin:14px 0}
+.ft-links a{font-weight:700}
+.copy{margin:0;font-weight:600}
+
+/* スマホ */
+@media (max-width:760px){
+  body{font-size:16px}
+  .panel{padding:18px 16px}
+  h1{font-size:1.55rem}
+  .hero{padding:36px 4px 40px}
+  .hero h1{font-size:1.65rem}
+  .brand-name{font-size:1.05rem}
+  .gnav{margin-left:0;width:100%}
+  .area-links{grid-template-columns:1fr}
+  .seasons{grid-template-columns:1fr 1fr}
+  .info,.info.big{grid-template-columns:6.5em 1fr}
+}
+@media (max-width:420px){.seasons{grid-template-columns:1fr}}
+@media print{.bg,.ad-frame,.gnav{display:none}.panel{box-shadow:none}}
+.copy-op{margin:2px 0 0;font-size:.9rem;font-weight:600}
