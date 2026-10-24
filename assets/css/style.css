@@ -196,3 +196,10 @@ ul.hint li::before{content:"●";position:absolute;left:.2em;color:var(--station
 @media (max-width:420px){.seasons{grid-template-columns:1fr}}
 @media print{.bg,.ad-frame,.gnav{display:none}.panel{box-shadow:none}}
 .copy-op{margin:2px 0 0;font-size:.9rem;font-weight:600}
+
+/* トップに戻る・ページの先頭に戻る */
+.back-links{max-width:1120px;margin:0 auto;padding:0 16px 16px;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:10px}
+.back-btn{display:inline-block;background:#fffdf7;color:var(--ink-strong);border:2px solid var(--accent);border-radius:999px;padding:8px 18px;font-weight:800;text-decoration:none;box-shadow:0 3px 10px rgba(40,20,0,.2)}
+.back-btn:hover{background:var(--accent);color:#fff}
+.back-btn[href="#top"]::before{content:"▲ "}
+@media (max-width:760px){.back-links{justify-content:center}}
