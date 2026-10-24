@@ -31,7 +31,7 @@
 <header class="site-header">
   <div class="hd-inner">
     <a class="brand" href="../index.html"><img src="../assets/img/favicon.svg" alt="" width="40" height="40"><span class="brand-name">鳥取県観光・道の駅往来</span></a>
-    <nav class="gnav" aria-label="メインメニュー"><ul><li><a href="../index.html">トップ</a></li><li><a href="../kanko/index.html">観光地一覧</a></li><li><a href="../eki/index.html">道の駅一覧</a></li><li><a href="../area/east.html">東部</a></li><li><a href="../area/central.html">中部</a></li><li><a href="../area/west.html">西部</a></li></ul></nav>
+    <nav class="gnav" aria-label="メインメニュー"><ul><li><a href="../index.html">トップ</a></li><li><a href="../kanko/index.html">観光地一覧</a></li><li><a href="../eki/index.html">道の駅一覧</a></li><li class="pc-only"><a href="../area/east.html">東部</a></li><li class="pc-only"><a href="../area/central.html">中部</a></li><li class="pc-only"><a href="../area/west.html">西部</a></li><li class="sp-only"><details class="area-menu"><summary>区域</summary><ul class="area-drop"><li><a href="../area/east.html">東部</a></li><li><a href="../area/central.html">中部</a></li><li><a href="../area/west.html">西部</a></li></ul></details></li></ul></nav>
   </div>
 </header>
 <main class="wrap"><nav class="crumbs" aria-label="現在位置"><ol><li><a href="../index.html">トップ</a></li><li><a href="../eki/index.html">道の駅一覧</a></li><li aria-current="page">道の駅 ポート赤碕</li></ol></nav>
@@ -154,6 +154,7 @@
     </ul>
     <p class="copy">&copy; <span id="copy-year">2026</span> 鳥取県観光・道の駅往来</p>
     <p class="copy-op">運営：<a href="https://leben-k.github.io/" target="_blank" rel="noopener">地域情報室</a></p>
+    <script>document.addEventListener("click",function(ev){var d=document.querySelector(".area-menu");if(d&&d.open&&!d.contains(ev.target)){d.open=false;}});</script>
     <script>(function(){var s=2026,y=new Date().getFullYear(),el=document.getElementById("copy-year");if(el&&y>s){el.textContent=s+"-"+y;}})();</script>
   </div>
 </footer>
